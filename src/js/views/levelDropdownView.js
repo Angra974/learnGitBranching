@@ -58,7 +58,8 @@ var LevelDropdownView = ContainedBase.extend({
       events: this.navEvents,
       aliasMap: {
         esc: 'negative',
-        enter: 'positive'
+        enter: 'positive',
+        shift: 'minmax'
       },
       wait: true
     });

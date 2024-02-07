@@ -9,6 +9,16 @@ var log = require('../log');
 var keyboard = require('../util/keyboard');
 
 const allCommands = Object.keys(getAllCommands());
+
+
+$(document).on('keyup', function(e){
+  if(e.which === 16 || e.key === 'Shift') {
+    $(".demonstrationText").toggleClass("minContent maxContent");
+  }
+     e.preventDefault();
+  
+});
+
 // Lets push a few commands up in the suggestion order,
 // which overrides the order from the exportj
 const autoCompleteSuggestionOrder = [
@@ -97,6 +107,7 @@ var CommandPromptView = Backbone.View.extend({
   },
 
   onKeyUp: function(e) {
+
     this.onKeyDown(e);
 
     // we need to capture some of these events.

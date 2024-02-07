@@ -1115,10 +1115,17 @@ div.gitDemonstrationView {
 
 .gitDemonstrationView > div.demonstrationText {
   margin-right: 10px;
-  max-height: 400px;
   max-width: 450px;
   overflow-y: scroll;
   overflow-x: hidden;
+}
+
+.gitDemonstrationView > div.demonstrationText.minContent {
+  max-height: 400px;
+}
+
+.gitDemonstrationView > div.demonstrationText.maxContent {
+  max-height: max-content;
 }
 
 .gitDemonstrationView > div.demonstrationText.noLongText {

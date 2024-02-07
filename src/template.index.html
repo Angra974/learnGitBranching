@@ -139,7 +139,7 @@
   </script>
 
   <script type="text/html" id="git-demonstration-view">
-    <div class="demonstrationText box vertical">
+    <div class="demonstrationText box vertical minContent">
       <div class="beforeText">
         <p>
           <%= beforeHTML %>
@@ -309,7 +309,9 @@
         <button class="noStyle"><i aria-hidden="true" class="icon-ok exit"></i><span class="visuallyHidden">OK</span></button>
       </div>
     <% } else { %>
+     
       <% if (showLeft) { %>
+
         <div class="box left">
           <button class="noStyle"><i aria-hidden="true" class="icon-circle-arrow-left"></i><span class="visuallyHidden">Previous</span></button>
       <% } else { %>

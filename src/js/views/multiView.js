@@ -60,7 +60,8 @@ var MultiView = Backbone.View.extend({
         left: 'negative',
         right: 'positive',
         enter: 'positive',
-        esc: 'quit'
+        esc: 'quit',
+        shift: "minmax"
       }
     });
 
