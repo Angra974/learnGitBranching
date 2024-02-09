@@ -9,6 +9,7 @@ var glob = require('glob');
 var _ = require('underscore');
 
 var { src, dest, series, watch } = require('gulp');
+var gulp = require('gulp');
 var log = require('fancy-log');
 var gHash = require('gulp-hash');
 var gClean = require('gulp-clean');
@@ -16,6 +17,8 @@ var concat = require('gulp-concat');
 var cleanCSS = require('gulp-clean-css');
 var gTerser = require('gulp-terser');
 var gJasmine = require('gulp-jasmine');
+var  connect = require('gulp-connect');
+
 var { minify } = require('html-minifier');
 var { SpecReporter } = require('jasmine-spec-reporter');
 var gJshint = require('gulp-jshint');
@@ -221,6 +224,13 @@ var deploy = series(
 
 var lint = series(jshint, compliment);
 
+gulp.task('serve', function() {
+
+  connect.server();
+
+});
+
+
 var watching = function() {
   return watch([
     'gulpfile.js',
@@ -231,6 +241,7 @@ var watching = function() {
     'src/levels/**/*.js'
   ], series([fastBuild , jasmine, jshint, lintStrings]));
 };
+
 
 module.exports = {
   default: build,
